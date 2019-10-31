@@ -7,10 +7,18 @@ function App() {
   const [balls, setBalls] = useState(0);
   const [strikes, setStrikes] = useState(0);
 
+  const addBall = () => {
+    setBalls(balls => balls + 1);
+  };
+
+  const addStrike = () => {
+    setStrikes(strikes => strikes + 1);
+  };
+
   return (
     <div className="App">
       <Display balls={balls} strikes={strikes} />
-      <Dashboard setBalls={setBalls} setStrikes={setStrikes} />
+      <Dashboard addBall={addBall} addStrike={addStrike} />
     </div>
   );
 }
