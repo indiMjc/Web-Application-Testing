@@ -8,7 +8,7 @@ function App() {
   const [strikes, setStrikes] = useState(0);
 
   const addBall = () => {
-    if (balls === 4) {
+    if (balls === 3) {
       setBalls(0);
       setStrikes(0);
     } else {
@@ -17,7 +17,7 @@ function App() {
   };
 
   const addStrike = () => {
-    if (strikes === 3) {
+    if (strikes === 2) {
       setBalls(0);
       setStrikes(0);
     } else {
