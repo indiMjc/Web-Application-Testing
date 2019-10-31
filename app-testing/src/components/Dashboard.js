@@ -1,7 +1,14 @@
 import React from "react";
 
 const Dashboard = () => {
-  return <h1>Dashboard H1</h1>;
+  return (
+    <>
+      <button>Strike</button>
+      <button>Ball</button>
+      <button>Foul</button>
+      <button>Hit</button>
+    </>
+  );
 };
 
 export default Dashboard;
