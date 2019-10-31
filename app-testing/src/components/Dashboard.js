@@ -1,10 +1,10 @@
 import React from "react";
 
-const Dashboard = () => {
+const Dashboard = props => {
   return (
     <>
-      <button>Strike</button>
-      <button>Ball</button>
+      <button onClick={() => props.addStrike()}>Strike</button>
+      <button onClick={() => props.addBall()}>Ball</button>
       <button>Foul</button>
       <button>Hit</button>
     </>
