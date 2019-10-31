@@ -5,7 +5,7 @@ const Dashboard = props => {
     <>
       <button onClick={() => props.addStrike()}>Strike</button>
       <button onClick={() => props.addBall()}>Ball</button>
-      <button>Foul</button>
+      <button onClick={() => props.foul()}>Foul</button>
       <button onClick={() => props.hit()}>Hit</button>
     </>
   );

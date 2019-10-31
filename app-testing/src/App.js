@@ -8,11 +8,21 @@ function App() {
   const [strikes, setStrikes] = useState(0);
 
   const addBall = () => {
-    setBalls(balls => balls + 1);
+    if (balls === 4) {
+      setBalls(0);
+      setStrikes(0);
+    } else {
+      setBalls(balls => balls + 1);
+    }
   };
 
   const addStrike = () => {
-    setStrikes(strikes => strikes + 1);
+    if (strikes === 3) {
+      setBalls(0);
+      setStrikes(0);
+    } else {
+      setStrikes(strikes => strikes + 1);
+    }
   };
 
   const hitReset = () => {
@@ -20,10 +30,22 @@ function App() {
     setStrikes(0);
   };
 
+  const foulBall = () => {
+    if (strikes < 2) {
+      setStrikes(strikes => strikes + 1);
+    }
+    return;
+  };
+
   return (
     <div className="App">
       <Display balls={balls} strikes={strikes} />
-      <Dashboard addBall={addBall} addStrike={addStrike} hit={hitReset} />
+      <Dashboard
+        addBall={addBall}
+        addStrike={addStrike}
+        hit={hitReset}
+        foul={foulBall}
+      />
     </div>
   );
 }
