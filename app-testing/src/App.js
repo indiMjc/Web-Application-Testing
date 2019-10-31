@@ -15,10 +15,15 @@ function App() {
     setStrikes(strikes => strikes + 1);
   };
 
+  const hitReset = () => {
+    setBalls(0);
+    setStrikes(0);
+  };
+
   return (
     <div className="App">
       <Display balls={balls} strikes={strikes} />
-      <Dashboard addBall={addBall} addStrike={addStrike} />
+      <Dashboard addBall={addBall} addStrike={addStrike} hit={hitReset} />
     </div>
   );
 }
